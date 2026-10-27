@@ -1,0 +1,48 @@
+name: Pedido de funcionalidade
+description: Sugira uma melhoria pequena, testavel e compativel com o escopo read-only.
+title: "[Feature] "
+labels:
+  - enhancement
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Nao proponha custodia, assinatura de transacoes, movimentacao de fundos ou um bot 24 horas. Nao inclua credenciais, carteiras reais, PII ou dados de usuario.
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problema ou necessidade
+      description: Explique o caso de uso com dados ficticios.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposta
+      description: Descreva a mudanca e como ela preserva leitura cautelosa e fail-closed.
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternativas consideradas
+    validations:
+      required: false
+  - type: textarea
+    id: examples
+    attributes:
+      label: Exemplo de interface ou teste
+      description: Use placeholders, fixtures e comandos locais sem segredos.
+    validations:
+      required: false
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Confirmacoes
+      options:
+        - label: A proposta nao exige chave privada, custodia, transacao ou movimentacao de fundos.
+          required: true
+        - label: Nao inclui credenciais, PII, saldos, nomes privados ou dados de usuario.
+          required: true
+        - label: Entendo que roadmap e ideias nao significam funcionalidade ja operacional.
+          required: true

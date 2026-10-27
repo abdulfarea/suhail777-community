@@ -1,0 +1,69 @@
+name: Relato de bug
+description: Relate um comportamento reproduzivel com dados sanitizados.
+title: "[Bug] "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Nao inclua credenciais, chaves privadas, API keys, saldos, PII, carteiras reais ou dados de usuario. Use fixtures e placeholders.
+  - type: input
+    id: version
+    attributes:
+      label: Commit ou versao
+      description: Informe um commit curto ou versao sem incluir dados privados.
+      placeholder: abc1234
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Ambiente
+      description: Informe sistema operacional e versao do Python.
+      placeholder: Ubuntu 24.04, Python 3.12
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Passos para reproduzir
+      description: Use comandos com placeholders e fixtures ficticios.
+      placeholder: |
+        1. Execute ...
+        2. Informe MINT_DE_EXEMPLO
+        3. Observe ...
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Resultado esperado
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Resultado observado
+      description: Remova valores privados, chaves, saldos e identificadores antes de colar a saida.
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs sanitizados
+      description: Cole somente logs sem segredos ou dados pessoais.
+      render: shell
+    validations:
+      required: false
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Confirmacoes
+      options:
+        - label: Removi credenciais, chaves privadas, API keys, saldos, PII, carteiras reais e dados de usuario.
+          required: true
+        - label: Usei um fixture ou placeholder, e nao uma carteira de terceiro.
+          required: true
+        - label: Li SECURITY.md para qualquer possivel vulnerabilidade.
+          required: true
